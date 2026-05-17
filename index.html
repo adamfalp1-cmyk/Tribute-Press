@@ -2,113 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tribute Press</title>
 
 <style>
 
+/* =========================
+   BASE 90s TYPES ET LOOK
+========================= */
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     background: #ffffff;
-    color: #111;
+    color: #000;
 }
 
-/* TOP LOGO */
+/* WRAPPER */
+.wrapper {
+    width: 760px;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/* HEADER */
 .header {
     text-align: center;
-    padding: 20px 10px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
 }
 
 .header img {
-    max-width: 320px;
-    height: auto;
+    max-width: 340px;
 }
 
 /* NAV */
 .nav {
     text-align: center;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    background: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 
 .nav a {
-    margin: 0 12px;
+    margin: 0 10px;
     text-decoration: none;
-    color: #111;
-    font-weight: bold;
+    color: #0000cc;
 }
 
 .nav a:hover {
-    color: red;
+    text-decoration: underline;
 }
 
 /* MARQUEE */
 .marquee {
     background: #000;
-    color: red;
-    padding: 6px;
+    color: #ff0000;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+/* =========================
+   TABLE CATALOG
+========================= */
 
-.card {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.card img {
+.catalog {
     width: 100%;
+    border-collapse: collapse;
+}
+
+.catalog td {
+    vertical-align: top;
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.catalog img {
+    width: 140px;
     height: auto;
+    border: 1px solid #ccc;
 }
 
+/* TITLE */
 .title {
-    margin-top: 8px;
     font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 6px;
 }
 
+/* DESCRIPTION */
 .desc {
-    font-size: 0.9rem;
-    margin: 6px 0;
-    color: #444;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #222;
 }
 
-.buy {
+/* =========================
+   ORDER BUTTON (REAL BUTTON FEEL)
+========================= */
+
+.order-btn {
     display: inline-block;
-    margin-top: 8px;
-    padding: 6px 10px;
-    border: 1px solid #111;
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: #111;
+    color: #000;
+    border: 1px solid #000;
+    background: #f9f9f9;
 }
 
-.buy:hover {
-    background: red;
+.order-btn:hover {
+    background: #000;
     color: #fff;
 }
 
 /* ABOUT */
 .about {
-    max-width: 800px;
-    margin: 60px auto;
     padding: 20px;
-    border-top: 1px solid #ddd;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
+/* FOOTER */
 .footer {
     text-align: center;
-    padding: 30px;
-    font-size: 0.8rem;
+    font-size: 11px;
+    padding: 20px;
     color: #666;
+    border-top: 1px solid #ccc;
 }
 
 </style>
@@ -117,9 +144,11 @@ body {
 
 <body>
 
-<!-- LOGO -->
+<div class="wrapper">
+
+<!-- HEADER -->
 <div class="header">
-    <img src="Tribute TEXT Logo .jpg" alt="Tribute Press Logo">
+    <img src="Tribute TEXT Logo .jpg" alt="Tribute Press">
 </div>
 
 <!-- NAV -->
@@ -131,51 +160,78 @@ body {
 
 <!-- MARQUEE -->
 <div class="marquee">
-    <marquee>NEW ZINES AVAILABLE • LIMITED PRINT RUNS • MAIL ORDER ONLY • INDEPENDENT COMICS PRESS •</marquee>
+    <marquee>
+        NEW ZINES AVAILABLE • LIMITED PRINT RUNS • MAIL ORDER ONLY • UNDERGROUND COMICS • INDEPENDENT PRESS •
+    </marquee>
 </div>
 
 <!-- CATALOG -->
-<div class="grid" id="catalog">
+<table class="catalog" id="catalog">
 
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=1">
-        <div class="title">ZINE TITLE 001</div>
-        <div class="desc">Short description of the comic or zine.</div>
-        <a class="buy" href="#">ORDER</a>
-    </div>
+<!-- ITEM 1 -->
+<tr>
+    <td width="160">
+        <img src="SB 1 Cover.jpg" alt="Smokin' Bedroom #1">
+    </td>
+    <td>
+        <div class="title">Smokin' Bedroom #1</div>
+        <div class="desc">
+            A gambling PI wades through a grim British underbelly of crooked gangsters, failed artists, deranged lovers, and bad decisions. Written and drawn by Adam Falp. 44 Pages, B + W.
+        </div>
+        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%27%20Bedroom%20%231">Order</a>
+    </td>
+</tr>
 
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=2">
-        <div class="title">ZINE TITLE 002</div>
-        <div class="desc">Short description of the comic or zine.</div>
-        <a class="buy" href="#">ORDER</a>
-    </div>
+<!-- ITEM 2 -->
+<tr>
+    <td>
+        <img src="SB 2 Cover.jpg" alt="Smokin' Bedroom #2">
+    </td>
+    <td>
+        <div class="title">Smokin' Bedroom #2</div>
+        <div class="desc">
+            Fraudulent footballers, a yearning useless artist, and an enraged pie entrepreneur tangle in a dark modern Britain where money and happiness are equally elusive and everyone is slightly unhinged. Written and drawn by Adam Falp. 40 Pages, B + W.
+        </div>
+        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%27%20Bedroom%20%232">Order</a>
+    </td>
+</tr>
 
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=3">
-        <div class="title">ZINE TITLE 003</div>
-        <div class="desc">Short description of the comic or zine.</div>
-        <a class="buy" href="#">ORDER</a>
-    </div>
+<!-- ITEM 3 -->
+<tr>
+    <td>
+        <img src="CCF COVER.webp" alt="Cockney Kung-Fu">
+    </td>
+    <td>
+        <div class="title">Cockney Kung-Fu</div>
+        <div class="desc">
+            Cockney Kung-Fu follows the exploits of a cage fighter and a team of bank robbers in seventies London. Nothing goes to plan. Written by Tony Esmond, Art by Nick Prolix with a pin-up by Ed Traquino. 40 Pages, B + W.
+        </div>
+        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Cockney%20Kung-Fu">Order</a>
+    </td>
+</tr>
 
-</div>
+</table>
 
-<!-- ABOUT / CONTACT (BOTTOM) -->
+<!-- ABOUT -->
 <div class="about" id="about">
-    <h2>ABOUT</h2>
-    <p>
-        Tribute Press is an independent comics imprint publishing underground zines and printed work.
-    </p>
 
-    <h2>CONTACT</h2>
-    <p>
-        Email: <a href="mailto:contact@tributepress.com">contact@tributepress.com</a>
-    </p>
+<h3>ABOUT</h3>
+<p>
+Tribute Press publishes underground comix and independent printed works.
+</p>
+
+<h3>CONTACT</h3>
+<p>
+Email: <a href="mailto:contact@tributepress.com">contact@tributepress.com</a>
+</p>
+
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © Tribute Press
+    © Tribute Press — Independent Comics Publisher
+</div>
+
 </div>
 
 </body>
