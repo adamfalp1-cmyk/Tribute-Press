@@ -1,74 +1,85 @@
 <!DOCTYPE html>
+    padding-top: 30px;
+}
+
+.section h2 {
+    color: #f5d77a;
+    letter-spacing: 3px;
+}
+
+.footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    padding-bottom: 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">TRIBUTE PRESS</div>
+        <div class="tagline">underground comix / xerox dreams / mail-order artifacts</div>
+    </div>
+
+    <div class="nav">
+        <a href="#comics">CATALOG</a>
+        <a href="#about">ABOUT</a>
+        <a href="#order">ORDER</a>
+    </div>
+
+    <div class="marquee">
+        <marquee>NEW ZINES IN STOCK • LIMITED PRINT RUNS • MAIL ORDER ONLY • HANDLE WITH CARE •</marquee>
     </div>
 
     <div class="grid" id="comics">
 
-        <div class="comic-card">
-            <img src="https://picsum.photos/400/550?random=1">
-            <div class="comic-title">BRAIN ROT #1</div>
-            <p>
-                A transmission from the sewer dimension.
-                32 pages of psychic contamination.
-            </p>
-
-            <a class="buy-button" href="https://square.link/YOUR-LINK-HERE" target="_blank">
-                BUY ISSUE
-            </a>
+        <div class="card">
+            <img src="https://picsum.photos/400/550?random=11">
+            <div class="title">SEWER PROPHECIES #1</div>
+            <div class="desc">Distorted transmissions from the underground mindspace. Photocopied decay and ink hallucinations.</div>
+            <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
         </div>
 
-        <div class="comic-card">
-            <img src="https://picsum.photos/400/550?random=2">
-            <div class="comic-title">DEAD CHANNELS</div>
-            <p>
-                Lost broadcasts recovered from a ruined future.
-            </p>
-
-            <a class="buy-button" href="https://square.link/YOUR-LINK-HERE" target="_blank">
-                ORDER NOW
-            </a>
+        <div class="card">
+            <img src="https://picsum.photos/400/550?random=12">
+            <div class="title">MEAT SIGNALS</div>
+            <div class="desc">Body horror broadcast in xerox fragments. Stapled reality collapse fiction.</div>
+            <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
         </div>
 
-        <div class="comic-card">
-            <img src="https://picsum.photos/400/550?random=3">
-            <div class="comic-title">MEAT COMPUTER</div>
-            <p>
-                Organic machinery. Body horror. Neon panic.
-            </p>
-
-            <a class="buy-button" href="https://square.link/YOUR-LINK-HERE" target="_blank">
-                GET COPY
-            </a>
+        <div class="card">
+            <img src="https://picsum.photos/400/550?random=13">
+            <div class="title">VOID CATALOG</div>
+            <div class="desc">A mail-order hallucination from a collapsing future archive.</div>
+            <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
         </div>
 
     </div>
 
-    <div id="about" style="margin-top:60px; border-top:1px dashed #00ff99; padding-top:30px;">
+    <div id="about" class="section">
         <h2>ABOUT</h2>
         <p>
-            TRIBUTE PRESS is an underground comic imprint dedicated to
-            obscure stories, multillith aesthetics, weird fiction,
-            and psychic collapse.
+            TRIBUTE PRESS publishes underground comix, xerox zines, and damaged narratives from the edges of print culture.
+            Inspired by mail-order catalogs, 70s counterculture comix, and the noise of old photocopiers.
         </p>
     </div>
 
-    <div id="contact" style="margin-top:60px; border-top:1px dashed #00ff99; padding-top:30px;">
-        <h2>CONTACT</h2>
-
+    <div id="order" class="section">
+        <h2>ORDER</h2>
         <p>
-            Instagram:
-            <a href="#" style="color:#ff00cc;">@voidrotpress</a>
-        </p>
-
-        <p>
-            Email:
-            <a href="mailto:you@example.com" style="color:#ff00cc;">
-                you@example.com
-            </a>
+            All issues are available via direct mail-order.
+            Click any cover above to purchase via Square.
         </p>
     </div>
 
     <div class="footer">
-        © 1998–2099 TRIBUTE PRESS
+        © TRIBUTE PRESS — PRINTED IN UNKNOWN LOCATIONS
     </div>
 
 </div>
