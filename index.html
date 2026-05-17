@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,27 +7,31 @@
 
 <style>
 
+/* =========================
+   BASE PAPER SYSTEM (V3 LIGHT CHAOS)
+========================= */
+
 body {
     margin: 0;
     padding: 0;
-    background: #1a1410;
-    color: #e6dccf;
+    background: #f4f1ea;
+    color: #1f1a17;
     font-family: "Courier New", monospace;
     overflow-x: hidden;
 }
 
-/* grain */
+/* subtle grain */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.16;
+    opacity: 0.08;
     mix-blend-mode: multiply;
 }
 
-/* scanlines */
+/* scan texture */
 body::after {
     content: "";
     position: fixed;
@@ -36,93 +39,66 @@ body::after {
     pointer-events: none;
     background: repeating-linear-gradient(
         to bottom,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 2px,
-        transparent 4px
+        rgba(0,0,0,0.02),
+        rgba(0,0,0,0.02) 1px,
+        transparent 3px,
+        transparent 6px
     );
-    opacity: 0.25;
+    opacity: 0.15;
 }
 
-/* subtle corruption flicker layer */
-@keyframes flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.97; }
-    100% { opacity: 1; }
-}
+/* =========================
+   WOBBLE
+========================= */
 
-/* wobble */
 @keyframes wobble {
-    0%   { transform: rotate(-0.18deg) translate(0px, 0px); }
-    50%  { transform: rotate(-0.22deg) translate(0.8px, -0.6px); }
-    100% { transform: rotate(-0.18deg) translate(0px, 0px); }
+    0% { transform: rotate(-0.12deg); }
+    50% { transform: rotate(-0.18deg); }
+    100% { transform: rotate(-0.12deg); }
 }
 
-/* horizontal scan shift glitch */
-@keyframes scanShift {
-    0% { transform: translateX(0px); }
-    20% { transform: translateX(-1px); }
-    40% { transform: translateX(1px); }
-    60% { transform: translateX(-0.5px); }
-    80% { transform: translateX(0.5px); }
-    100% { transform: translateX(0px); }
-}
+/* =========================
+   PAGE
+========================= */
 
 .page {
     margin: 30px auto;
     width: 92%;
     max-width: 1100px;
-    background: #241b16;
+    background: #fffdf8;
     position: relative;
-    animation: wobble 7s infinite ease-in-out, flicker 4s infinite;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: wobble 8s infinite ease-in-out;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.15);
 }
 
-/* torn / ink edge + corruption vignette */
+/* subtle paper vignette */
 .page::before {
     content: "";
     position: absolute;
-    inset: -20px;
+    inset: 0;
     pointer-events: none;
-    background:
-        radial-gradient(circle at 10% 20%, transparent 60%, rgba(0,0,0,0.55) 100%),
-        radial-gradient(circle at 90% 30%, transparent 65%, rgba(0,0,0,0.5) 100%),
-        radial-gradient(circle at 40% 90%, transparent 70%, rgba(0,0,0,0.6) 100%);
-    opacity: 0.9;
+    background: radial-gradient(circle at 15% 10%, transparent 65%, rgba(0,0,0,0.08) 100%);
+    opacity: 0.6;
 }
 
-/* ink bleed + distortion */
 .page::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background:
-        radial-gradient(circle at 30% 40%, rgba(0,0,0,0.25), transparent 60%),
-        radial-gradient(circle at 70% 60%, rgba(0,0,0,0.22), transparent 55%),
-        radial-gradient(circle at 50% 10%, rgba(0,0,0,0.18), transparent 50%);
-    opacity: 0.7;
+    background: radial-gradient(circle at 80% 70%, rgba(0,0,0,0.06), transparent 60%);
+    opacity: 0.5;
 }
 
-/* fold crease */
-.fold {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    transform: translateX(-1px);
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(0,0,0,0.2), rgba(255,255,255,0.05));
-    opacity: 0.35;
-}
+/* =========================
+   BANNER
+========================= */
 
-/* banner */
 .banner {
     height: 160px;
-    background: url('Tribute TEXT Logo .jpg');
+    background: url('https://picsum.photos/1200/400?grayscale');
     background-size: cover;
-    filter: contrast(1.25) brightness(1) grayscale(1);
+    filter: contrast(1.15) brightness(0.85) grayscale(1);
     position: relative;
 }
 
@@ -130,46 +106,61 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(255,255,255,0.25);
 }
 
+/* logo INSIDE banner (FIXED STRUCTURE) */
 .banner-logo {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    letter-spacing: 6px;
-    color: #f2e3d0;
-    text-shadow: 2px 2px 0 #000;
-    animation: scanShift 6s infinite;
 }
+
+.banner-logo img {
+    max-height: 120px;
+    width: auto;
+    filter: grayscale(1) contrast(1.2);
+}
+
+/* =========================
+   NAV
+========================= */
 
 .nav {
     text-align: center;
-    padding: 10px;
-    border-bottom: 1px dashed rgba(255,255,255,0.12);
+    padding: 12px;
+    border-bottom: 1px dashed rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.4);
 }
 
 .nav a {
-    color: #e6dccf;
-    margin: 0 10px;
+    color: #1f1a17;
+    margin: 0 12px;
     text-decoration: none;
     font-weight: bold;
 }
 
 .nav a:hover {
-    color: #ff4a3d;
+    color: #c0392b;
 }
 
+/* =========================
+   MARQUEE
+========================= */
+
 .marquee {
-    background: rgba(0,0,0,0.4);
-    color: #ff4a3d;
+    background: rgba(0,0,0,0.05);
+    color: #c0392b;
     padding: 8px;
-    border-top: 1px dashed rgba(255,255,255,0.12);
-    border-bottom: 1px dashed rgba(255,255,255,0.12);
+    border-top: 1px dashed rgba(0,0,0,0.12);
+    border-bottom: 1px dashed rgba(0,0,0,0.12);
 }
+
+/* =========================
+   GRID
+========================= */
 
 .grid {
     display: grid;
@@ -179,25 +170,42 @@ body::after {
 }
 
 .card {
-    background: #2b211b;
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
     padding: 12px;
+    position: relative;
+    transform: rotate(0deg);
+}
+
+.card:nth-child(odd) { transform: rotate(-0.6deg); }
+.card:nth-child(even) { transform: rotate(0.4deg); }
+
+.card::before {
+    content: "LIMITED RUN";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 3px 6px;
+    border: 1px solid rgba(0,0,0,0.15);
+    color: rgba(192, 57, 43, 0.8);
+    transform: rotate(6deg);
 }
 
 .card img {
     width: 100%;
-    filter: grayscale(1) contrast(1.35) brightness(0.8);
+    filter: grayscale(1) contrast(1.2) brightness(0.95);
 }
 
 .title {
     margin-top: 10px;
-    font-size: 1.1rem;
-    color: #f0e2d2;
+    font-size: 1.05rem;
+    color: #1f1a17;
 }
 
 .desc {
     font-size: 0.85rem;
-    color: #c9b9a8;
+    color: #4a3f3a;
     margin-top: 6px;
 }
 
@@ -206,112 +214,116 @@ body::after {
     margin-top: 10px;
     padding: 8px;
     background: #111;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(0,0,0,0.2);
     color: white;
     text-decoration: none;
 }
 
 .buy:hover {
-    background: #ff4a3d;
-    color: #000;
+    background: #c0392b;
+    color: #fff;
 }
 
-/* ABOUT SECTION AT BOTTOM */
+/* =========================
+   ABOUT
+========================= */
+
 .about {
     padding: 40px 20px;
-    border-top: 1px dashed rgba(255,255,255,0.12);
-}
-
-.about h2 {
-    margin: 0 0 10px 0;
-    font-size: 1rem;
-    letter-spacing: 2px;
+    border-top: 1px dashed rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.03);
 }
 
 .contact-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 12px;
-    background: #000;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: #e6dccf;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #1f1a17;
     text-decoration: none;
 }
 
 .contact-btn:hover {
-    background: #ff4a3d;
-    color: #000;
+    background: #c0392b;
+    color: #fff;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
     text-align: center;
     padding: 30px;
-    color: #b9a99a;
+    color: #6b5d55;
     font-size: 0.8rem;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="page">
 
-```
-<div class="fold"></div>
-
-<div class="banner-logo">
-    <img src="Tribute TEST Logo .jpg" style="max-height:120px;">
-</div>
-
-<div class="nav">
-    <a href="#comics">CATALOG</a>
-    <a href="#about">ABOUT</a>
-    <a href="#about">CONTACT</a>
-</div>
-
-<div class="marquee">
-    <marquee>NEW ZINES IN STOCK • LIMITED COPIES • MAIL ORDER ONLY • PRINTED IN UNKNOWN LOCATIONS • HANDLE WITH CARE •</marquee>
-</div>
-
-<div class="grid" id="comics">
-
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=91">
-        <div class="title">SEWER PROPHECIES #1</div>
-        <div class="desc">Photocopied transmissions from underground print decay.</div>
-        <a class="buy" href="#">ORDER</a>
+    <!-- BANNER (FIXED STRUCTURE) -->
+    <div class="banner">
+        <div class="banner-logo">
+            <img src="Tribute TEST Logo .jpg" alt="Tribute Press Logo">
+        </div>
     </div>
 
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=92">
-        <div class="title">MEAT SIGNALS</div>
-        <div class="desc">Broken xerox fiction from biological static noise.</div>
-        <a class="buy" href="#">ORDER</a>
+    <!-- NAV -->
+    <div class="nav">
+        <a href="#comics">CATALOG</a>
+        <a href="#about">ABOUT</a>
+        <a href="#about">CONTACT</a>
     </div>
 
-    <div class="card">
-        <img src="https://picsum.photos/400/500?random=93">
-        <div class="title">VOID CATALOG</div>
-        <div class="desc">A scanned archive of impossible mail-order artifacts.</div>
-        <a class="buy" href="#">ORDER</a>
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <marquee>NEW ZINES IN STOCK • LIMITED COPIES • MAIL ORDER ONLY • PRINTED IN UNKNOWN LOCATIONS • HANDLE WITH CARE •</marquee>
     </div>
 
-</div>
+    <!-- GRID -->
+    <div class="grid" id="comics">
 
-<div class="about" id="about">
-    <h2>ABOUT</h2>
-    <p>TRIBUTE PRESS publishes underground comix, xerox artifacts, and printed anomalies.</p>
-    <p>Small-run, mail-order only. No algorithm. No platform.</p>
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=301">
+            <div class="title">SEWER PROPHECIES #1</div>
+            <div class="desc">Photocopied transmissions from underground print decay.</div>
+            <a class="buy" href="#">ORDER</a>
+        </div>
 
-    <a class="contact-btn" href="mailto:contact@tributepress.com">CONTACT US</a>
-</div>
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=302">
+            <div class="title">MEAT SIGNALS</div>
+            <div class="desc">Broken xerox fiction from biological static noise.</div>
+            <a class="buy" href="#">ORDER</a>
+        </div>
 
-<div class="footer">
-    © TRIBUTE PRESS — UNOFFICIAL PRINT ARCHIVE
-</div>
-```
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=303">
+            <div class="title">VOID CATALOG</div>
+            <div class="desc">A scanned archive of impossible mail-order artifacts.</div>
+            <a class="buy" href="#">ORDER</a>
+        </div>
+
+    </div>
+
+    <!-- ABOUT -->
+    <div class="about" id="about">
+        <p>TRIBUTE PRESS publishes underground comix, xerox artifacts, and printed anomalies.</p>
+        <p>Small-run mail-order archive. No platform. No algorithm.</p>
+
+        <a class="contact-btn" href="mailto:contact@tributepress.com">CONTACT US</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © TRIBUTE PRESS — UNOFFICIAL PRINT ARCHIVE
+    </div>
 
 </div>
 
