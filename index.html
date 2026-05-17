@@ -1,189 +1,6 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRIBUTE PRESS // UNDERGROUND COMIX MAILORDER</title>
-
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    background: #0b0b0b;
-    color: #e8e2d6;
-    font-family: "Courier New", monospace;
-    letter-spacing: 0.5px;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.12;
-    mix-blend-mode: overlay;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 2px,
-        transparent 4px
-    );
-    opacity: 0.4;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-.header {
-    border: 3px solid #c9b37e;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    background: #111;
-}
-
-.logo {
-    font-size: 3.2rem;
-    letter-spacing: 6px;
-    color: #f5d77a;
-    text-shadow: 2px 2px 0 #000;
-}
-
-.tagline {
-    margin-top: 10px;
-    color: #b9a57a;
-    font-style: italic;
-}
-
-.nav {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.nav a {
-    color: #e8d07a;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    color: #ff4d4d;
-}
-
-.marquee {
-    margin-top: 20px;
-    border-top: 1px dashed #666;
-    border-bottom: 1px dashed #666;
-    padding: 10px;
-    color: #ff4d4d;
-    background: #0f0f0f;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.card {
-    background: #121212;
-    border: 2px solid #c9b37e;
-    padding: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    transform: rotate(-0.3deg);
-}
-
-.card:nth-child(even) {
-    transform: rotate(0.4deg);
-}
-
-.card img {
-    width: 100%;
-    border: 2px solid #333;
-    filter: contrast(1.1) grayscale(0.2);
-}
-
-.title {
-    font-size: 1.3rem;
-    color: #f5d77a;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-
-.desc {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-top: 8px;
-    line-height: 1.4;
-}
-
-.buy {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 12px;
-    background: #ff3b3b;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid #000;
-}
-
-.buy:hover {
-    background: #f5d77a;
-    color: #000;
-}
-
-.section {
-    margin-top: 60px;
-    border-top: 1px dashed #555;
-    padding-top: 30px;
-}
-
-.section h2 {
-    color: #f5d77a;
-    letter-spacing: 3px;
-}
-
-.footer {
-    margin-top: 60px;
-    text-align: center;
-    color: #666;
-    font-size: 0.8rem;
-    padding-bottom: 40px;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-```
 <div class="header">
     <div class="logo">TRIBUTE PRESS</div>
-    <div class="tagline">underground comix / xerox dreams / mail-order artifacts</div>
+    <div class="tagline">xerox relics / underground transmissions / mail-order decay</div>
 </div>
 
 <div class="nav">
@@ -192,30 +9,32 @@ body::after {
     <a href="#order">ORDER</a>
 </div>
 
+<div class="banner"></div>
+
 <div class="marquee">
-    <marquee>NEW ZINES IN STOCK • LIMITED PRINT RUNS • MAIL ORDER ONLY • HANDLE WITH CARE •</marquee>
+    <marquee>NEW ZINES ARRIVING • LIMITED COPIES • PRINTED IN UNKNOWN LOCATIONS • MAIL ORDER ONLY •</marquee>
 </div>
 
 <div class="grid" id="comics">
 
     <div class="card">
-        <img src="https://picsum.photos/400/550?random=11">
+        <img src="https://picsum.photos/400/550?random=31">
         <div class="title">SEWER PROPHECIES #1</div>
-        <div class="desc">Distorted transmissions from the underground mindspace. Photocopied decay and ink hallucinations.</div>
+        <div class="desc">Photocopied hallucinations from beneath the city grid.</div>
         <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
     </div>
 
     <div class="card">
-        <img src="https://picsum.photos/400/550?random=12">
+        <img src="https://picsum.photos/400/550?random=32">
         <div class="title">MEAT SIGNALS</div>
-        <div class="desc">Body horror broadcast in xerox fragments. Stapled reality collapse fiction.</div>
+        <div class="desc">Broken transmission comics from a biological radio station.</div>
         <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
     </div>
 
     <div class="card">
-        <img src="https://picsum.photos/400/550?random=13">
+        <img src="https://picsum.photos/400/550?random=33">
         <div class="title">VOID CATALOG</div>
-        <div class="desc">A mail-order hallucination from a collapsing future archive.</div>
+        <div class="desc">A scanned archive of impossible mail-order ephemera.</div>
         <a class="buy" href="https://square.link/YOUR-LINK" target="_blank">ORDER</a>
     </div>
 
@@ -223,20 +42,14 @@ body::after {
 
 <div id="about" class="section">
     <h2>ABOUT</h2>
-    <p>TRIBUTE PRESS publishes underground comix, xerox zines, and damaged narratives from the edges of print culture.</p>
+    <p>TRIBUTE PRESS publishes underground comix, xerox zines, and degraded print culture artifacts. Everything is scanned, stapled, or hallucinated.</p>
 </div>
 
 <div id="order" class="section">
     <h2>ORDER</h2>
-    <p>All issues available via direct mail-order. Click covers above to purchase.</p>
+    <p>Mail-order direct. No carts. No algorithm. Just printed matter and intent.</p>
 </div>
 
 <div class="footer">
-    © TRIBUTE PRESS — PRINTED IN UNKNOWN LOCATIONS
+    © TRIBUTE PRESS — ARCHIVE OF PRINTED NOISE
 </div>
-```
-
-</div>
-
-</body>
-</html>
