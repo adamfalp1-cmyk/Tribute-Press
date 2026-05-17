@@ -6,10 +6,6 @@
 
 <style>
 
-/* =========================
-   BASE 90s TYPES ET LOOK
-========================= */
-
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -65,10 +61,7 @@ body {
     font-size: 12px;
 }
 
-/* =========================
-   TABLE CATALOG
-========================= */
-
+/* CATALOG TABLE */
 .catalog {
     width: 100%;
     border-collapse: collapse;
@@ -90,7 +83,28 @@ body {
 .title {
     font-weight: bold;
     font-size: 15px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+}
+
+/* STOCK SYSTEM */
+.stock {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.instock {
+    color: #0a7a0a;
+}
+
+.lowstock {
+    color: #b36b00;
+}
+
+.soldout {
+    color: #b30000;
+    text-decoration: line-through;
 }
 
 /* DESCRIPTION */
@@ -100,10 +114,7 @@ body {
     color: #222;
 }
 
-/* =========================
-   ORDER BUTTON (REAL BUTTON FEEL)
-========================= */
-
+/* ORDER BUTTON */
 .order-btn {
     display: inline-block;
     margin-top: 10px;
@@ -126,7 +137,6 @@ body {
     padding: 20px;
     font-size: 13px;
     border-top: 1px solid #ccc;
-    font-family: Georgia, "Times New Roman", serif;
 }
 
 /* FOOTER */
@@ -175,31 +185,14 @@ body {
     </td>
     <td>
         <div class="title">Smokin' Bedroom #1</div>
+        <div class="stock instock">IN STOCK</div>
         <div class="desc">
             A gambling PI wades through a grim British underbelly of crooked gangsters, failed artists, deranged lovers, and bad decisions. Written and drawn by Adam Falp. 44 Pages, B + W.
         </div>
-        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%27%20Bedroom%20%231">Order</a>
+        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%20Bedroom%201">Order</a>
     </td>
 </tr>
-.stock {
-    font-size: 11px;
-    margin-top: 6px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.5px;
-}
 
-/* states */
-.instock {
-    color: #0a7a0a;
-}
-
-.lowstock {
-    color: #b36b00;
-}
-
-.soldout {
-    color: #b30000;
-    text-decoration: line-through;
 <!-- ITEM 2 -->
 <tr>
     <td>
@@ -207,10 +200,11 @@ body {
     </td>
     <td>
         <div class="title">Smokin' Bedroom #2</div>
+        <div class="stock instock">IN STOCK</div>
         <div class="desc">
             Fraudulent footballers, a yearning useless artist, and an enraged pie entrepreneur tangle in a dark modern Britain where money and happiness are equally elusive and everyone is slightly unhinged. Written and drawn by Adam Falp. 40 Pages, B + W.
         </div>
-        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%27%20Bedroom%20%232">Order</a>
+        <a class="order-btn" href="mailto:contact@tributepress.com?subject=Order%20-%20Smokin%20Bedroom%202">Order</a>
     </td>
 </tr>
 
@@ -221,6 +215,7 @@ body {
     </td>
     <td>
         <div class="title">Cockney Kung-Fu</div>
+        <div class="stock lowstock">LOW STOCK</div>
         <div class="desc">
             Cockney Kung-Fu follows the exploits of a cage fighter and a team of bank robbers in seventies London. Nothing goes to plan. Written by Tony Esmond, Art by Nick Prolix with a pin-up by Ed Traquino. 40 Pages, B + W.
         </div>
@@ -232,17 +227,11 @@ body {
 
 <!-- ABOUT -->
 <div class="about" id="about">
-
 <h3>ABOUT</h3>
-<p>
-Tribute Press publishes underground comix and independent printed works.
-</p>
+<p>Tribute Press publishes underground comix and independent printed works.</p>
 
 <h3>CONTACT</h3>
-<p>
-Email: <a href="mailto:contact@tributepress.com">contact@tributepress.com</a>
-</p>
-
+<p>Email: <a href="mailto:contact@tributepress.com">contact@tributepress.com</a></p>
 </div>
 
 <!-- FOOTER -->
